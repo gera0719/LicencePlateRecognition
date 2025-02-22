@@ -1,0 +1,14 @@
+# python bytecode fileok
+*.pyc
+*.pyo
+__pycache__/
+
+# virtualis k.
+venv/
+
+#jupyter nb. checkpointok
+.ipynb_checkpoints/
+
+#ide fileok
+.idea/
+.vscode/
