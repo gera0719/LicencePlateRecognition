@@ -12,3 +12,5 @@ venv/
 #ide fileok
 .idea/
 .vscode/
+
+data/
