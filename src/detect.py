@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 
 
-img_cv = cv2.imread("/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/result/platedetected4/crops/license_plate/1.jpg")
+img_cv = cv2.imread("/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/result/platedetected5/crops/license_plate/4.jpg")
 
 if img_cv is None:
     print("Error: Could not load image.")
