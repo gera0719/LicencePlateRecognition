@@ -1,19 +1,25 @@
+import os
 import pytesseract
 from PIL import Image
-import numpy as np
 import preprocess_pipeline as pp
-import cv2
 
 
-img_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/result/platedetected6/crops/license_plate/102.jpg"
-
-    
-img = pp.preprocess_pipeline(img_path)
+img_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/result/platedetected6/crops/license_plate"
 custom_config = r'--psm 13 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-img_rgb = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_GRAY2RGB))
-text = pytesseract.image_to_string(img_rgb, config=custom_config)
 
-text = pytesseract.image_to_string(img, config=custom_config)
-    
-print("OCR Output:")
-print("[" + text + "]")
+def perform_ocr(folder_path):
+    for filename in sorted(os.listdir(folder_path)):
+        if filename.lower().endswith((".jpg", ".jpeg", ".png", ".bmp")):
+            image_path = os.path.join(folder_path, filename)
+
+            try:
+                img = pp.preprocess_pipeline(image_path)
+
+                text = pytesseract.image_to_string(img, config=custom_config).strip()
+                print(f"{filename}: [{text}]")
+
+            except Exception as e:
+                print(f"Error processing {filename}: {e}")
+
+if __name__ == "__main__":
+    perform_ocr(img_path)
