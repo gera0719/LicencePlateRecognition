@@ -6,7 +6,6 @@ output_labels_dir = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/data/pro
 os.makedirs(output_labels_dir, exist_ok=True)
 
 def convert_voc_to_yolo(xml_file, output_file):
-    """Convert a single VOC XML file to a YOLO format text file."""
     tree = ET.parse(xml_file)
     root = tree.getroot()
 
@@ -41,4 +40,4 @@ for file_name in os.listdir(annotations_dir):
         convert_voc_to_yolo(xml_path, output_path)
         print(f"Converted {xml_path} to {output_path}")
 
-print("✅ Annotation conversion complete!")
+print("Annotation conversion complete!")

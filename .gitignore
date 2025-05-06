@@ -18,3 +18,5 @@ data/
 models/
 
 result/
+
+preprocess_ocr_output/

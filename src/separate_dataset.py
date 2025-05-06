@@ -45,10 +45,10 @@ def copy_files(image_list, split):
         if os.path.exists(src_label_path):
             shutil.copy(src_label_path, dst_label_path)
         else:
-            print(f"⚠️ Annotation not found for image: {img_filename}")
+            print(f"Annotation not found for image: {img_filename}")
 
 copy_files(train_images, "train")
 copy_files(val_images, "val")
 copy_files(test_images, "test")
 
-print("✅ Dataset splitting complete!")
+print("Dataset splitting complete!")

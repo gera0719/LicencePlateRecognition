@@ -11,7 +11,7 @@ def preprocess_image(image_path, output_folder):
     img = cv2.imread(image_path)
 
     if img is None:
-        print(f"❌ Error: Could not load image: {image_path}")
+        print(f"Error: Could not load image: {image_path}")
         return
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -37,17 +37,17 @@ for subset in ["netherlands_day", "switzerland"]:
     subset_output_path = os.path.join(OUTPUT_DIR, subset)
 
     if not os.path.exists(subset_input_path):
-        print(f"❌ Error: Input folder not found: {subset_input_path}")
+        print(f"Error: Input folder not found: {subset_input_path}")
         continue
     
     for image_name in os.listdir(subset_input_path):
         image_path = os.path.join(subset_input_path, image_name)
 
         if os.path.isdir(image_path):
-            print(f"⚠️ Skipping directory: {image_path}")
+            print(f"Skipping directory: {image_path}")
             continue
 
-        print(f"🖼 Preprocessing image: {image_path}")
+        print(f"Preprocessing image: {image_path}")
         preprocess_image(image_path, subset_output_path)
 
-print("✅ Preprocessing complete! Processed images saved in:", OUTPUT_DIR)
+print(f"Preprocessing complete! Processed images saved in: {OUTPUT_DIR}")
