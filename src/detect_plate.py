@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import os
 
 def detect_plates():
-    model_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/models/stepzerotest/weights/best.pt"
+    model_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/models/stepzeroftune/weights/best.pt"
 
     source_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/data/test"
 
