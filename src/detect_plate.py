@@ -1,5 +1,4 @@
 from ultralytics import YOLO
-import os
 
 def detect_plates():
     model_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/models/stepzeroftune/weights/best.pt"

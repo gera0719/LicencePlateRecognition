@@ -1,6 +1,5 @@
 import os
 import pytesseract
-from PIL import Image
 import preprocess_pipeline as pp
 
 

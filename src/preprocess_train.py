@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 import os
 import shutil
 from pathlib import Path
@@ -49,7 +48,6 @@ def process_folder(images_input_dir, labels_input_dir, images_output_dir, labels
     print(f"Processed images saved to: {images_output_dir}")
     print(f"Labels copied to: {labels_output_dir}")
 
-# Példa használat:
 if __name__ == "__main__":
     images_input = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/data/raw/stepzero/images"
     labels_input = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/data/processed/stepzero/annotations"

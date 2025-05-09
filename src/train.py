@@ -1,5 +1,5 @@
 from ultralytics import YOLO
-def main():
+def train_model():
     model = YOLO("yolov8n.pt")
     
     model.train(
@@ -14,4 +14,4 @@ def main():
     model.val()
 
 if __name__ == "__main__":
-    main()
+    train_model()

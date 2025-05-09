@@ -1,9 +1,6 @@
 import cv2
 import numpy as np
-import math
 import os
-import pytesseract
-from PIL import Image
 from typing import Union
 
 
@@ -41,14 +38,6 @@ def deskew_image_by_lines(image: np.ndarray) -> np.ndarray:
     rot_mat = cv2.getRotationMatrix2D(center, angle, 1.0)
     deskewed = cv2.warpAffine(image, rot_mat, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
     return deskewed
-
-# def is_upside_down(image: np.ndarray) -> bool:
-#     normal = pytesseract.image_to_string(image, config='--psm 7')
-#     flipped = pytesseract.image_to_string(cv2.rotate(image, cv2.ROTATE_180), config='--psm 7')
-
-#     score_normal = sum(c.isalnum() for c in normal)
-#     score_flipped = sum(c.isalnum() for c in flipped)
-#     return score_flipped > score_normal
 
 def denoise_image(image: np.ndarray) -> np.ndarray:
     return cv2.bilateralFilter(image, 9, 75, 75)
@@ -88,9 +77,6 @@ def preprocess_pipeline(image_input: Union[str, np.ndarray]) -> np.ndarray:
 
     image = resize_image(image, scale=2.0)
     image = deskew_image_by_lines(image)
-
-    # if is_upside_down(image):
-    #     image = cv2.rotate(image, cv2.ROTATE_180)
 
     image = denoise_image(image)
     image = grayscale_image(image)
