@@ -20,3 +20,5 @@ models/
 result/
 
 preprocess_ocr_output/
+
+installed.txt
