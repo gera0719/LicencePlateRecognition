@@ -13,12 +13,10 @@ venv/
 .idea/
 .vscode/
 
-data/
 
-models/
-
-result/
-
-preprocess_ocr_output/
+data/*
+!data/test/
+data/test/*
+!data/test/testimg.zip
 
 installed.txt
