@@ -3,7 +3,7 @@ import pytesseract
 import preprocess_pipeline as pp
 
 
-img_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/result/platedetected6/crops/license_plate"
+img_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/data/result/platedetected6/crops/license_plate"
 custom_config = r'--psm 13 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def perform_ocr(folder_path):

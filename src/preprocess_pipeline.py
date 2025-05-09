@@ -87,8 +87,8 @@ def preprocess_pipeline(image_input: Union[str, np.ndarray]) -> np.ndarray:
     return image
 
 if __name__ == "__main__":
-    input_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/result/platedetected6/crops/license_plate/5.jpg"
-    output_dir = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/result/preprocess_ocr_output/"
+    input_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/data/result/platedetected6/crops/license_plate/5.jpg"
+    output_dir = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/data/result/preprocess_ocr_output/"
     os.makedirs(output_dir, exist_ok=True)
 
     processed = preprocess_pipeline(input_path)

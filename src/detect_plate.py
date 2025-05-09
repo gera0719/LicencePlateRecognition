@@ -5,7 +5,7 @@ def detect_plates():
 
     source_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/data/test"
 
-    project_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/result"
+    project_path = "/mnt/g/Linux/UbuntuWSLws/plate_recognition_project/data/result"
     name = "platedetected"
 
     model = YOLO(model_path)
